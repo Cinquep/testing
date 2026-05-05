@@ -1,0 +1,99 @@
+/* 
+ Name: Cinque Preston
+ File: homework4.css
+ Date Created: 2026-05-04
+ Date Updated: 2026-05-04
+ Purpose: HW4 styles — fixed header/footer, welcome banner, iFrame section, Remember Me row, fetch status
+*/
+
+/* ── Fixed header (content protection) ── */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(20, 20, 20);
+    background-image: url("medic.png");
+    background-repeat: repeat;
+    background-size: 170px 170px;
+    min-height: 200px;
+}
+
+/* ── Fixed footer (content protection) ── */
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(162, 255, 144);
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(30, 30, 30);
+    margin: 0;
+}
+
+/* Offset body content so it isn't hidden under fixed header/footer */
+#page-content {
+    margin-top: 220px;
+    margin-bottom: 80px;
+}
+
+/* ── Welcome banner (cookie) ── */
+#welcome-banner {
+    background: rgba(0, 80, 120, 0.92);
+    color: #fff;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    letter-spacing: 0.5px;
+}
+
+#welcome-banner a {
+    color: rgb(162, 255, 144);
+    margin-left: 16px;
+    font-size: 13px;
+}
+
+/* ── iFrame section ── */
+#iframe-section {
+    text-align: center;
+    margin: 18px auto 10px;
+    max-width: 860px;
+}
+
+#iframe-section h3 {
+    color: rgb(0, 80, 120);
+    margin-bottom: 6px;
+}
+
+#iframe-section iframe {
+    border: 3px solid #4a90a4;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    max-width: 860px;
+    height: 340px;
+}
+
+/* ── Remember Me row ── */
+.remember-row {
+    background: #eaf9f0;
+    border: 1px solid #b2dfc7;
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+/* ── Fetch status message ── */
+#fetch-status {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin: 4px 0;
+}
