@@ -440,11 +440,16 @@ function deleteCookie(name) {
 var LS_PREFIX = "pmc_";   // Preston Medical Center prefix
 
 function lsSave(key, val) {
-    localStorage.setItem(LS_PREFIX + key, val);
+    try {
+        localStorage.setItem(LS_PREFIX + key, val);
+    } catch(e) {
+        console.log("couldnt save: " + e);
+    }
 }
 
 function lsGet(key) {
-    return localStorage.getItem(LS_PREFIX + key);
+    var item = localStorage.getItem(LS_PREFIX + key);
+    return item;
 }
 
 function lsRemove(key) {
