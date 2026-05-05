@@ -16,9 +16,9 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     FIXED HEADER (content protection)
-     ══════════════════════════════════════════ -->
+<!-- 
+     Fixed Header
+ -->
 <div id="header">
     <table id="header-table">
         <tr>
@@ -37,18 +37,18 @@
     </table>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- 
      PAGE CONTENT (scrollable middle)
-     ══════════════════════════════════════════ -->
+ -->
 <div id="page-content">
 
-    <!-- Cookie-based welcome banner -->
+    <!-- welcom banner -->
     <div id="welcome-banner">
         <span id="welcome-msg">Welcome, New User!</span>
         <span id="not-you-link"></span>
     </div>
 
-    <!-- iFrame Section (body) -->
+    <!-- iFrame stuff-->
     <div id="iframe-section">
         <h3>&#127973; Find Us &mdash; Missouri City, TX</h3>
         <iframe
@@ -482,14 +482,14 @@
 
     </div><!-- end #main-layout -->
 
-    <!-- Output table appears here after clicking Review -->
+    <!-- Output table appears here after clicking review button-->
     <div id="outputformdata"></div>
 
 </div><!-- end #page-content -->
 
-<!-- ══════════════════════════════════════════
-     FIXED FOOTER (content protection)
-     ══════════════════════════════════════════ -->
+<!-- 
+     Fixed footer
+ -->
 <div id="footer">
     <hr style="margin:4px 0;">
     Preston Medical &nbsp;|&nbsp;
@@ -497,17 +497,17 @@
     &nbsp;|&nbsp; PO BOX 65721, Missouri City TX 77459
 </div>
 
-<!-- ══════════════════════════════════════════
+<!--
      SCRIPTS
-     ══════════════════════════════════════════ -->
+    -->
 
-<!-- External JS from previous homeworks -->
+<!-- External JS from homework3 -->
 <script src="homework3.js"></script>
 
 <script>
-// ─────────────────────────────────────────────────
-//  DATE DISPLAY
-// ─────────────────────────────────────────────────
+
+//  Date display
+
 (function() {
     var days   = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var months = ["January","February","March","April","May","June",
@@ -520,9 +520,9 @@
 })();
 
 
-// ─────────────────────────────────────────────────
-//  COOKIE HELPERS
-// ─────────────────────────────────────────────────
+
+//  Cookie stuff
+
 function setCookie(name, value, hours) {
     var exp = new Date();
     exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
@@ -547,9 +547,7 @@ function deleteCookie(name) {
 }
 
 
-// ─────────────────────────────────────────────────
-//  LOCAL STORAGE HELPERS
-// ─────────────────────────────────────────────────
+
 var LS_PREFIX = "pmc_";   // Preston Medical Center prefix
 
 function lsSave(key, val) {
@@ -564,7 +562,7 @@ function lsRemove(key) {
     localStorage.removeItem(LS_PREFIX + key);
 }
 
-// Fields we persist (excludes SSN, password for security)
+// Fields we persist excluding the private fields
 var PERSIST_FIELDS = [
     "firstname","middleinit","lastname","DOB",
     "addr1","addr2","city","state","zip",
@@ -628,9 +626,8 @@ function clearLocalStorage() {
 }
 
 
-// ─────────────────────────────────────────────────
-//  COOKIE / WELCOME LOGIC  (runs on page load)
-// ─────────────────────────────────────────────────
+
+
 function initWelcome() {
     var savedName = getCookie("pmc_firstname");
 
