@@ -40,6 +40,8 @@
 #page-content {
     margin-top: 220px;
     margin-bottom: 80px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /*Welcome banner */
@@ -78,6 +80,8 @@
     width: 100%;
     max-width: 860px;
     height: 340px;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Remember Me row  */
