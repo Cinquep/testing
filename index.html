@@ -12,89 +12,7 @@
     <title>Appointment Registration - Preston Medical Center</title>
     <link rel="stylesheet" href="homework1.css">
     <link rel="stylesheet" href="homework2.css">
-    <style>
-        /* ── HW4: Fixed header & footer (content protection) ── */
-        #header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgb(20, 20, 20);
-            background-image: url("medic.png");
-            background-repeat: repeat;
-            background-size: 170px 170px;
-            min-height: 200px;
-        }
-        #footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgb(162, 255, 144);
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-            color: rgb(30, 30, 30);
-            margin: 0;
-        }
-        /* Offset body content so it isn't hidden under fixed header/footer */
-        #page-content {
-            margin-top: 220px;
-            margin-bottom: 80px;
-        }
-        /* ── Welcome banner ── */
-        #welcome-banner {
-            background: rgba(0, 80, 120, 0.92);
-            color: #fff;
-            text-align: center;
-            padding: 8px 16px;
-            font-size: 15px;
-            font-family: Georgia, serif;
-            letter-spacing: 0.5px;
-        }
-        #welcome-banner a {
-            color: rgb(162,255,144);
-            margin-left: 16px;
-            font-size: 13px;
-        }
-        /* ── iFrame section ── */
-        #iframe-section {
-            text-align: center;
-            margin: 18px auto 10px;
-            max-width: 860px;
-        }
-        #iframe-section h3 {
-            color: rgb(0,80,120);
-            margin-bottom: 6px;
-        }
-        #iframe-section iframe {
-            border: 3px solid #4a90a4;
-            border-radius: 8px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-            width: 100%;
-            max-width: 860px;
-            height: 340px;
-        }
-        /* ── Remember Me row ── */
-        .remember-row {
-            background: #eaf9f0;
-            border: 1px solid #b2dfc7;
-            border-radius: 6px;
-            padding: 8px 14px;
-            margin: 8px 0;
-            font-size: 13px;
-        }
-        /* ── Fetch status ── */
-        #fetch-status {
-            font-size: 12px;
-            color: #888;
-            text-align: center;
-            margin: 4px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="homework4.css">
 </head>
 <body>
 
@@ -792,7 +710,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // ─────────────────────────────────────────────────
-//  FETCH API — Load states list from external file
+//  FETCH API — Load states list from external XML file
 // ─────────────────────────────────────────────────
 async function loadStates() {
     var statusEl = document.getElementById("fetch-status");
@@ -833,38 +751,7 @@ async function loadStates() {
     }
 }
 
-// Inline fallback state data (used if states.json isn't on the server yet)
-function loadStatesInline() {
-    var inlineStates = [
-        {abbr:"AL",name:"Alabama"},{abbr:"AK",name:"Alaska"},{abbr:"AZ",name:"Arizona"},
-        {abbr:"AR",name:"Arkansas"},{abbr:"CA",name:"California"},{abbr:"CO",name:"Colorado"},
-        {abbr:"CT",name:"Connecticut"},{abbr:"DE",name:"Delaware"},{abbr:"DC",name:"District Of Columbia"},
-        {abbr:"FL",name:"Florida"},{abbr:"GA",name:"Georgia"},{abbr:"HI",name:"Hawaii"},
-        {abbr:"ID",name:"Idaho"},{abbr:"IL",name:"Illinois"},{abbr:"IN",name:"Indiana"},
-        {abbr:"IA",name:"Iowa"},{abbr:"KS",name:"Kansas"},{abbr:"KY",name:"Kentucky"},
-        {abbr:"LA",name:"Louisiana"},{abbr:"ME",name:"Maine"},{abbr:"MD",name:"Maryland"},
-        {abbr:"MA",name:"Massachusetts"},{abbr:"MI",name:"Michigan"},{abbr:"MN",name:"Minnesota"},
-        {abbr:"MS",name:"Mississippi"},{abbr:"MO",name:"Missouri"},{abbr:"MT",name:"Montana"},
-        {abbr:"NE",name:"Nebraska"},{abbr:"NV",name:"Nevada"},{abbr:"NH",name:"New Hampshire"},
-        {abbr:"NJ",name:"New Jersey"},{abbr:"NM",name:"New Mexico"},{abbr:"NY",name:"New York"},
-        {abbr:"NC",name:"North Carolina"},{abbr:"ND",name:"North Dakota"},{abbr:"OH",name:"Ohio"},
-        {abbr:"OK",name:"Oklahoma"},{abbr:"OR",name:"Oregon"},{abbr:"PA",name:"Pennsylvania"},
-        {abbr:"PR",name:"Puerto Rico"},{abbr:"RI",name:"Rhode Island"},{abbr:"SC",name:"South Carolina"},
-        {abbr:"SD",name:"South Dakota"},{abbr:"TN",name:"Tennessee"},{abbr:"TX",name:"Texas"},
-        {abbr:"UT",name:"Utah"},{abbr:"VT",name:"Vermont"},{abbr:"VA",name:"Virginia"},
-        {abbr:"WA",name:"Washington"},{abbr:"WV",name:"West Virginia"},{abbr:"WI",name:"Wisconsin"},
-        {abbr:"WY",name:"Wyoming"}
-    ];
-    var select = document.getElementById("state");
-    select.innerHTML = '<option value=""></option>';
-    inlineStates.forEach(function(s) {
-        var opt = document.createElement("option");
-        opt.value = s.abbr; opt.textContent = s.name;
-        select.appendChild(opt);
-    });
-    var savedState = lsGet("state");
-    if (savedState) select.value = savedState;
-}
+
 
 
 // ─────────────────────────────────────────────────
