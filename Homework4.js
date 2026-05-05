@@ -133,7 +133,7 @@ function initWelcome() {
     if (savedName) {
         // Returning user
         document.getElementById("welcome-msg").innerHTML =
-            "&#128075; Welcome back, <strong>" + savedName + "</strong>!";
+            "Welcome back, <strong>" + savedName + "</strong>!";
 
         document.getElementById("not-you-link").innerHTML =
             '&nbsp;&nbsp;<a href="#" onclick="startNewUser(); return false;" style="color:rgb(162,255,144);">' +
