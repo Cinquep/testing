@@ -1,0 +1,73 @@
+/* 
+ Name: Cinque Preston
+ File: homework2.css
+ Date Created: 2026-03-24
+ Date Updated: 2026-04-20
+ Purpose: Styles for the form review summary table
+*/
+
+#outputformdata {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Wrapper table */
+table.output {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Lucida Sans', Verdana, sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Header row */
+table.output th {
+    background-color: #4a90a4;
+    color: #ffffff;
+    padding: 12px 18px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid #2e6b7a;
+}
+
+/* All cells */
+table.output td {
+    padding: 8px 16px;
+    border-bottom: 1px solid #d0e8f5;
+    vertical-align: middle;
+}
+
+/* Alternating row shading */
+table.output tr:nth-child(even) td {
+    background-color: #eaf4fb;
+}
+table.output tr:nth-child(odd) td {
+    background-color: #ffffff;
+}
+
+/* Hover highlight */
+table.output tr:hover td {
+    background-color: #cde8f5;
+}
+
+/* Field label column */
+td.review-label {
+    font-weight: bold;
+    color: #1a4a5a;
+    width: 40%;
+    white-space: nowrap;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* User entry value column */
+td.review-value {
+    color: #333;
+    text-align: left;
+    width: 60%;
+}

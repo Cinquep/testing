@@ -1,0 +1,211 @@
+/* 
+ Program name: homework1.css
+ Author: Cinque Preston
+ Date created: 2026-02-15
+ Date last edited: 2026-04-22
+ Version: 1.3
+ Description: External stylesheet for the Preston Medical Center
+*/
+body 
+{
+    background-color: rgb(202, 230, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(20, 20, 20);
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3
+{
+    font-family: Georgia, 'Times New Roman', serif;
+    color: rgb(0, 80, 120);
+}
+/* Hyperlinks */
+a
+{
+    color: rgb(0, 100, 160);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:visited
+{
+    color: rgb(90, 0, 130);
+}
+a:hover
+{
+    text-decoration: underline;
+    color: rgb(0, 60, 100);
+}
+#header
+{
+    background-color: rgb(20, 20, 20);
+    background-image: url("medic.png");
+    background-repeat: repeat;
+    background-size: 170px 170px;
+    min-height: 200px;
+}
+#header-table
+{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+#header-table td
+{
+    vertical-align: middle;
+    padding: 8px;
+}
+
+.banner-date > span
+{
+    background: rgba(0,0,0,0.7);
+    border-radius: 6px;
+    padding: 2px 8px;
+    display: inline-block;
+    white-space: nowrap;
+}
+#header-logo
+{
+    width: 200px;
+}
+#footer
+{
+    background-color: rgb(162, 255, 144);
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(30, 30, 30);
+}
+/* Class selectors*/
+table.form, tr.form, td.form 
+{
+    margin: 0 auto;
+    width: 600px;
+    opacity: 1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    border-spacing: 12px;
+    color: rgb(0, 0, 0);
+}
+.banner-title
+{
+    font-weight: bold;
+    font-size: 39px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: Georgia, serif;
+    width: 100%;
+}
+.banner-title span
+{
+    width: auto;
+    display: inline-block;
+    background: rgba(0,0,0,0.7);
+    border-radius: 6px;
+    padding: 2px 12px;
+}
+.banner-date
+{
+    text-align: right;
+    vertical-align: bottom !important;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    width: 200px;
+}
+/* Error messages */
+.error-msg
+{
+    display: block;
+    color: red;
+}
+#main-layout
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 10px 20px;
+    justify-content: center;
+}
+#body
+{
+    flex: 0 0 auto;
+}
+/* Panels */
+#left-panel, #right-panel
+{
+    flex: 0 0 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 10px;
+}
+.info-card
+{
+    background-color: #ffffff;
+    border: 1px solid #b0d8ea;
+    border-left: 5px solid #4a90a4;
+    border-radius: 6px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-size: 13px;
+    line-height: 1.6;
+}
+.info-card h3
+{
+    margin: 0 0 7px 0;
+    font-size: 14px;
+    color: #1a4a5a;
+    font-family: 'Lucida Sans', Verdana, sans-serif;
+}
+.info-card p, .info-card ul
+{
+    margin: 0;
+    color: #333;
+}
+.info-card ul
+{
+    padding-left: 16px;
+}
+.info-card li
+{
+    margin-bottom: 3px;
+}
+/* right */
+.graphic-panel
+{
+    background: linear-gradient(160deg, #d0eef8 0%, #a8d8ea 100%);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 14px 16px;
+    border: 1px solid #7ec8e3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.graphic-title
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a4a5a;
+    margin: 10px 0 4px;
+    font-family: Georgia, serif;
+}
+.graphic-sub
+{
+    font-size: 12px;
+    color: #2e6b7a;
+    margin: 0;
+    line-height: 1.5;
+}
+.trust-card
+{
+    border-left-color: rgb(162, 255, 144);
+}
+.doctor-img
+{
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,50 @@
+ /* 
+ Name: Cinque Preston
+ File: thankyou.css
+ Date Created: 2026-02-20
+ Date Updated: 2026-04-08
+ Purpose: Style sheet for MIS 3371 HW1 submit page
+ */
+body 
+{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #d0e8f5;
+    font-family: Georgia, serif;
+}
+
+#header 
+{
+    text-align: center;
+    background-color: rgb(162, 255, 144);
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 10px;
+}
+
+
+.site-title 
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: 39px;
+    text-align: center;
+}
+
+.date-cell 
+{
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 14px;
+}
+
+#footer
+{
+    text-align: center;
+    background-color: rgb(162, 255, 144);
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 4px;
+}
+

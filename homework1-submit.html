@@ -1,0 +1,55 @@
+<!-- 
+ Name: Cinque Preston
+ File: homework1.css
+ Date Created: 2026-02-15
+ Date Updated: 2026-02-23
+ Purpose: Style sheet for MIS 3371 HW1
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Appointment Submitted - Preston Medical Center</title>
+    <link rel="stylesheet" href="thankyou.css">
+</head>
+<body>
+
+    <div id="header">
+        <table width="100%">
+            <tr>
+                <td>
+                    <img src="SOMETHING.png" alt="Preston Medical Logo" width="200" height="200">
+                </td>
+                <td class="site-title">Preston Medical Center</td>
+                <td class="date-cell">Today's date: <span id="today"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <div id="body">
+        <div class="thank-you-box">
+            <div class="checkmark">
+            </div>
+            <h1>Thank You!</h1>
+            <p>Your appointment request has been successfully submitted. A member of our staff will be in touch with you shortly to confirm your appointment.</p>
+            <a href="index.html" class="return-btn">&#8592; Return to Form<br></a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <hr>
+        Preston Medical
+        <a href="https://theuselessweb.com/">CONTACT US</a>
+        <br>
+        PO BOX 65721
+        <br>
+        Missouri City TX 77459
+    </div>
+
+    <script>
+        document.getElementById("today").innerHTML = new Date().toLocaleDateString();
+    </script>
+
+</body>
+</html>
