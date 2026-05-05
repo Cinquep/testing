@@ -437,89 +437,66 @@ function deleteCookie(name) {
 
 
 
-var LS_PREFIX = "pmc_";   // Preston Medical Center prefix
-
-function lsSave(key, val) {
-    try {
-        localStorage.setItem(LS_PREFIX + key, val);
-    } catch(e) {
-        console.log("couldnt save: " + e);
+// save stuff to local storage
+function saveField(id) {
+    var el = document.getElementById(id);
+    if (el) {
+        localStorage.setItem(id, el.value);
     }
 }
 
-function lsGet(key) {
-    var item = localStorage.getItem(LS_PREFIX + key);
-    return item;
-}
-
-function lsRemove(key) {
-    localStorage.removeItem(LS_PREFIX + key);
-}
-
-// Fields we persist excluding the private ones
-var PERSIST_FIELDS = [
-    "firstname","middleinit","lastname","DOB",
-    "addr1","addr2","city","state","zip",
-    "phone","email1","user","description","feeling"
-];
-
-var PERSIST_CHECKBOXES = ["illness1","illness2","illness3","illness4","illnessOther"];
-var PERSIST_RADIOS     = ["gender","medication","vaccination"];
-
-// Save a single text/date/select/textarea/range field
-function saveField(id) {
-    var el = document.getElementById(id);
-    if (el) lsSave(id, el.value);
-}
-
-// Save a checkbox state
 function saveCheckbox(id) {
     var el = document.getElementById(id);
-    if (el) lsSave(id, el.checked ? "1" : "0");
+    if (el) {
+        localStorage.setItem(id, el.checked ? "1" : "0");
+    }
 }
 
-// Save a radio group
 function saveRadio(name) {
     var checked = document.querySelector('input[name="' + name + '"]:checked');
-    lsSave("radio_" + name, checked ? checked.value : "");
+    if (checked) {
+        localStorage.setItem("radio_" + name, checked.value);
+    } else {
+        localStorage.setItem("radio_" + name, "");
+    }
 }
 
-// Restore all saved fields into the form
 function restoreFromLocalStorage() {
-    PERSIST_FIELDS.forEach(function(id) {
-        var val = lsGet(id);
-        if (val !== null) {
-            var el = document.getElementById(id);
-            if (el) el.value = val;
+    var fields = ["firstname","middleinit","lastname","DOB",
+                  "addr1","addr2","city","state","zip",
+                  "phone","email1","user","description","feeling"];
+
+    for (var i = 0; i < fields.length; i++) {
+        var val = localStorage.getItem(fields[i]);
+        var el = document.getElementById(fields[i]);
+        if (val && el) {
+            el.value = val;
         }
-    });
-    // Range display
+    }
+
     var feeling = document.getElementById("feeling");
-    if (feeling) document.getElementById("urgencyValue").innerHTML = feeling.value;
+    if (feeling) {
+        document.getElementById("urgencyValue").innerHTML = feeling.value;
+    }
 
-    PERSIST_CHECKBOXES.forEach(function(id) {
-        var val = lsGet(id);
-        var el  = document.getElementById(id);
-        if (val !== null && el) el.checked = (val === "1");
-    });
+    var checkboxes = ["illness1","illness2","illness3","illness4","illnessOther"];
+    for (var i = 0; i < checkboxes.length; i++) {
+        var val = localStorage.getItem(checkboxes[i]);
+        var el = document.getElementById(checkboxes[i]);
+        if (val && el) {
+            el.checked = (val === "1");
+        }
+    }
 
-    PERSIST_RADIOS.forEach(function(name) {
-        var val = lsGet("radio_" + name);
+    var radios = ["gender","medication","vaccination"];
+    for (var i = 0; i < radios.length; i++) {
+        var val = localStorage.getItem("radio_" + radios[i]);
         if (val) {
-            var rb = document.querySelector('input[name="' + name + '"][value="' + val + '"]');
+            var rb = document.querySelector('input[name="' + radios[i] + '"][value="' + val + '"]');
             if (rb) rb.checked = true;
         }
-    });
+    }
 }
-
-// Wipe all local storage entries for this app
-function clearLocalStorage() {
-    PERSIST_FIELDS.forEach(function(id)       { lsRemove(id); });
-    PERSIST_CHECKBOXES.forEach(function(id)   { lsRemove(id); });
-    PERSIST_RADIOS.forEach(function(name)     { lsRemove("radio_" + name); });
-}
-
-
 
 
 function initWelcome() {
@@ -546,6 +523,16 @@ function initWelcome() {
     }
 }
 
+function clearLocalStorage() {
+    var fields = ["firstname","middleinit","lastname","DOB",
+                  "addr1","addr2","city","state","zip",
+                  "phone","email1","user","description","feeling",
+                  "illness1","illness2","illness3","illness4","illnessOther",
+                  "radio_gender","radio_medication","radio_vaccination"];
+    for (var i = 0; i < fields.length; i++) {
+        localStorage.removeItem(fields[i]);
+    }
+}
 // Called when name is wrong/user wants to do a new form
 function startNewUser() {
     if (confirm("Clear all saved data and start fresh?")) {
@@ -628,7 +615,7 @@ async function loadStates() {
         setTimeout(function() { statusEl.textContent = ""; }, 2000);
 
         // After states load, restore any saved state selection
-        var savedState = lsGet("state");
+        var savedState = localStorage.getItem("state");
         if (savedState) select.value = savedState;
 
     } catch (err) {
