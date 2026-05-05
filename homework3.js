@@ -619,12 +619,9 @@ async function loadStates() {
         if (savedState) select.value = savedState;
 
     } catch (err) {
-        // Fallback: populate from inline data if fetch fails
-        statusEl.textContent = "Could not load states.xml — using built-in list.";
-        loadStatesInline();
+    statusEl.textContent = "Could not load states.xml.";
     }
 }
-
 
 
 
