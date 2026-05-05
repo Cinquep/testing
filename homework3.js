@@ -2,7 +2,7 @@
  Name: Cinque Preston
  File: homework3.js
  Date Created: 2026-03-15
- Date Updated: 2026-04-20
+ Date Updated: 2026-05-04
  Purpose: Combined validation + review table for Preston Medical registration form
 */
 
