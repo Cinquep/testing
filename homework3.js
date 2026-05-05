@@ -37,7 +37,7 @@ var FIELD_LABELS = {
 
 var error_flag = "0";
 
-// REVIEW TABLE 
+// Review table java
 
 function getdata1() {
   var form = document.getElementById("register");
@@ -93,14 +93,13 @@ function removedata1() {
   document.getElementById("submit").disabled = true;
 }
 
-// HELPER 
 
 function showMsg(id, msg) {
   var el = document.getElementById(id);
   if (el) el.innerHTML = msg;
 }
 
-// SSN AUTO-FORMAT 
+// SocialSec auto formatting function 
 
 function formatSSN() {
   var val = document.getElementById("SSN").value.replace(/[^0-9]/g, "");
@@ -122,7 +121,7 @@ function checkSSN() {
   }
 }
 
-// NAME FIELDS 
+// Name field
 
 function checkfirstname() {
   var val = document.getElementById("firstname").value;
@@ -162,7 +161,7 @@ function checklastname() {
   }
 }
 
-// DATE OF BIRTH 
+// Date of birth things
 
 function checkDOB() {
   var val = document.getElementById("DOB").value;
@@ -188,7 +187,7 @@ function checkDOB() {
   }
 }
 
-// CONTACT FIELDS
+// Contact fields
 
 function checkemail() {
   var val = document.getElementById("email1").value;
@@ -214,7 +213,7 @@ function checkphone() {
   }
 }
 
-// ADDRESS FIELDS
+// Address
 
 function checkaddr1() {
   var val = document.getElementById("addr1").value;
@@ -269,7 +268,7 @@ function checkzip() {
   }
 }
 
-// USERNAME 
+// User
 
 function checkuser() {
   var val = document.getElementById("user").value;
@@ -291,7 +290,7 @@ function checkuser() {
   }
 }
 
-// PASSWORD 
+// Pass
 
 function passwordentry() {
   var pass     = document.getElementById("pass").value;
@@ -336,7 +335,7 @@ function checkpassword2() {
   }
 }
 
-// RADIO BUTTONs
+// Radio buttons
 
 function checkgender() {
   if (!document.querySelector('input[name="gender"]:checked')) {
@@ -365,7 +364,7 @@ function checkvaccination() {
   }
 }
 
-// CHECK ALL 
+// Check all
 
 function checkform() {
   error_flag = "0";
@@ -452,7 +451,7 @@ function lsRemove(key) {
     localStorage.removeItem(LS_PREFIX + key);
 }
 
-// Fields we persist excluding the private fields
+// Fields we persist excluding the private ones
 var PERSIST_FIELDS = [
     "firstname","middleinit","lastname","DOB",
     "addr1","addr2","city","state","zip",
@@ -535,7 +534,7 @@ function initWelcome() {
         restoreFromLocalStorage();
 
     } else {
-        // First-time visitor
+        // First time 
         document.getElementById("welcome-msg").innerHTML =
             "Welcome, New User! Please fill out the form below.";
         document.getElementById("not-you-link").innerHTML = "";
@@ -594,7 +593,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//  FETCH API — Load states list from external XML file
+//  Load states list from external XML file
 async function loadStates() {
     var statusEl = document.getElementById("fetch-status");
     try {
@@ -637,7 +636,6 @@ async function loadStates() {
 
 
 
-//  PAGE INIT
 window.addEventListener("load", function() {
     loadStates();  
     initWelcome(); 
