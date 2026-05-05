@@ -1,4 +1,10 @@
-
+/* 
+ Name: Cinque Preston
+ File: homework3.js
+ Date Created: 2026-05-01
+ Date Updated: 2026-05-4
+ Purpose: Homework 4 java and cookie stuff
+*/
 //  Date display
 
 (function() {
