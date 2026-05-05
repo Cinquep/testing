@@ -1,12 +1,12 @@
 /* 
  Name: Cinque Preston
  File: homework4.css
- Date Created: 2026-05-04
+ Date Created: 2026-05-01
  Date Updated: 2026-05-04
- Purpose: HW4 styles — fixed header/footer, welcome banner, iFrame section, Remember Me row, fetch status
+ Purpose: HW4 styles — fixed header/footer, welcome banner, iFrame section, Remember Me row, etc...
 */
 
-/* ── Fixed header (content protection) ── */
+/*  Fixed header */
 #header {
     position: fixed;
     top: 0;
@@ -20,7 +20,7 @@
     min-height: 200px;
 }
 
-/* ── Fixed footer (content protection) ── */
+/*  Fixed footer  */
 #footer {
     position: fixed;
     bottom: 0;
@@ -36,13 +36,13 @@
     margin: 0;
 }
 
-/* Offset body content so it isn't hidden under fixed header/footer */
+/* body content  */
 #page-content {
     margin-top: 220px;
     margin-bottom: 80px;
 }
 
-/* ── Welcome banner (cookie) ── */
+/* Welcome banner */
 #welcome-banner {
     background: rgba(0, 80, 120, 0.92);
     color: #fff;
@@ -59,7 +59,7 @@
     font-size: 13px;
 }
 
-/* ── iFrame section ── */
+/* iFrame stuff */
 #iframe-section {
     text-align: center;
     margin: 18px auto 10px;
@@ -80,17 +80,9 @@
     height: 340px;
 }
 
-/* ── Remember Me row ── */
-.remember-row {
-    background: #eaf9f0;
-    border: 1px solid #b2dfc7;
-    border-radius: 6px;
-    padding: 8px 14px;
-    margin: 8px 0;
-    font-size: 13px;
-}
 
-/* ── Fetch status message ── */
+
+/* Fetch status message */
 #fetch-status {
     font-size: 12px;
     color: #888;
