@@ -146,7 +146,7 @@ function initWelcome() {
     } else {
         // First-time visitor
         document.getElementById("welcome-msg").innerHTML =
-            "&#127817; Welcome, New User! Please fill out the form below.";
+            "Welcome, New User! Please fill out the form below.";
         document.getElementById("not-you-link").innerHTML = "";
     }
 }
