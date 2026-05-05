@@ -6,7 +6,7 @@
  Purpose: Combined validation + review table for Preston Medical registration form
 */
 
-// Maps each field name to a friendly label for the review table
+// Maps each field name to a user label for the review table
 var FIELD_LABELS = {
   firstname:      "First Name",
   middleinit:     "Middle Initial",
